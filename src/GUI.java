@@ -78,6 +78,12 @@ public class GUI extends JFrame {
         generate.addActionListener((e) -> getData());
         add(generate, 1, 5, 1, 1);
 
+        JLabel powered = new JLabel("powereed by mmhlego");
+        powered.setForeground(new Color(240, 240, 240));
+        powered.setFont(new Font("Dialog", 2, 12));
+        powered.setBounds(w / 2 - 70, h - 14, 140, 14);
+        add(powered);
+
         setUndecorated(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Quick java project builder");
