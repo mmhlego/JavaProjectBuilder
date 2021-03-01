@@ -24,12 +24,12 @@ public class ProjectCreator {
         createProject();
         createPom();
         openProject();
-        try {
+        /*try {
             Thread.sleep(10000);
         } catch (Exception er) {
             System.out.println(er.toString());
         }
-        createClasspath(false);
+        createClasspath(false);*/
     }
 
     public void createClasspath(boolean create) {
@@ -81,7 +81,7 @@ public class ProjectCreator {
             writer.println("\t\t</attributes>");
             writer.println("\t</classpathentry>");
 
-            writer.println("\t<classpathentry kind=\"src\" output=\"target/classes\" path=\"src\">");
+            writer.println("\t<classpathentry kind=\"src\" output=\"target/classes\" path=\"src/main/java\">");
             writer.println("\t\t<attributes>");
             writer.println("\t\t\t<attribute name=\"optional\" value=\"true\"/>");
             writer.println("\t\t\t<attribute name=\"maven.pomderived\" value=\"true\"/>");
@@ -223,9 +223,11 @@ public class ProjectCreator {
     }
 
     public void createMain() {
-        File main = new File(path + "\\src\\Main.java");
+        File main = new File(path + "\\src\\main\\java\\Main.java");
         try {
             new File(path + "\\src").mkdir();
+            new File(path + "\\src\\main").mkdir();
+            new File(path + "\\src\\main\\java").mkdir();
             main.createNewFile();
             PrintWriter writer = new PrintWriter(main);
             writer.println("public class Main{");
