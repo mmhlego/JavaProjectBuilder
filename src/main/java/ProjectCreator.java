@@ -251,16 +251,23 @@ public class ProjectCreator {
     }
 
     public void openProject() {
+        //{ "Do not open", "VS code", "Atom", "Intellij IDEA" };
         try {
-            String program = "";
-            if (editor.equals("atom")) {
-                program = "atom";
-            } else if (editor.equals("vs code")) {
+            String program = "Do not open";
+            if (editor.equals("")) {
+                program = "";
+            } else if (editor.equals("VS code")) {
                 program = "code";
+            } else if (editor.equals("Atom")) {
+                program = "atom";
+            } else if (editor.equals("Intellij IDEA")) {
+                program = "idea";
             }
 
             Runtime.getRuntime().exec("cmd /c " + program + " .", null, new File(path));
-        } catch (Exception e) {
+        } catch (
+
+        Exception e) {
             System.out.println(e.toString());
         }
     }

@@ -10,7 +10,7 @@ public class GUI extends JFrame {
     int w = 400, h = 400, m = 30, rows = 6, columns = 2;
 
     String pathValue = new String(), artifactValue, groupValue, versionValue;
-    String[] options = { "vs code", "atom" };
+    public String[] options = { "Do not open", "VS code", "Atom", "Intellij IDEA" };
 
     JTextField artifactId, group, version;
     JComboBox<String> editor;
